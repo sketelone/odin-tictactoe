@@ -1,0 +1,445 @@
+Script started on 2022-10-12 13:38:10-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="95" LINES="13"]
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:12
+    let row = array(3);
+              ^
+
+ReferenceError: array is not defined
+    at /home/sketelone/repos/odin-tictactoe/script.js:12:15
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:15:3)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:3
+updateTile(0,2,"X")
+^
+
+ReferenceError: updateTile is not defined
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:3:1)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:3
+gameBoard.updateTile(0,2,"X")
+^
+
+ReferenceError: Cannot access 'gameBoard' before initialization
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:3:1)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+currentRow[col]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+X
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:27
+console.log(board)
+            ^
+
+ReferenceError: board is not defined
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:27:13)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:27
+console.log(gameBoardboard)
+            ^
+
+ReferenceError: gameBoardboard is not defined
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:27:13)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:34
+resetBoard()
+^
+
+ReferenceError: resetBoard is not defined
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:34:1)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ row
+
+Command 'row' not found, did you mean:
+
+  command 'roo' from snap roo (2.0.3)
+  command 'rox' from deb rox-filer (1:2.11-1)
+  command 'ro' from deb golang-redoctober (0.0~git20161017.0.78e9720-4)
+  command 'sow' from deb ruby-hoe (3.21.0+dfsg1-1)
+  command 'cow' from deb fl-cow (0.6-4.2)
+  command 'raw' from deb util-linux (2.34-0.1ubuntu9.3)
+
+See 'snap info <snapname>' for additional versions.
+
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ rownode script.js row
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ console.log("row[K[K[K[Krw[Kow)
+bash: syntax error near unexpected token `row'
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ console.log(row)node script.js row
+Debugger attached.
+[ [90m<3 empty items>[39m ]
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js row[2Pconsole.log(row)node script.js rowrow[Knode script.js row[K[K[K[K
+Debugger attached.
+[ [90m<3 empty items>[39m ]
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [90m<3 empty items>[39m ]
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ], [ [90m<3 empty items>[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m'X'[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ],
+  [ [90m<2 empty items>[39m, [32m'X'[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[
+  [ [32m'X'[39m, [90m<2 empty items>[39m ],
+  [ [32m'X'[39m, [90m<2 empty items>[39m ],
+  [ [32m'X'[39m, [90m<2 empty items>[39m ]
+]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:24
+        board = [row,row,row]
+                 ^
+
+ReferenceError: row is not defined
+    at Object.resetBoard (/home/sketelone/repos/odin-tictactoe/script.js:24:18)
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:34:11)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[36m[Function: getBoard][39m
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[33m0[39m [33m1[39m X
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:56
+game.checkWin()
+     ^
+
+TypeError: game.checkWin is not a function
+    at Object.<anonymous> (/home/sketelone/repos/odin-tictactoe/script.js:56:6)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1105:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+ wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+ wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+ wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+ wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+[33mfalse[39m
+[33mfalse[39m
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m''[39m, [32m''[39m ] ]
+[33mfalse[39m
+[33mfalse[39m
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m'X'[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+[33mtrue[39m
+[33mfalse[39m
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m'X'[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m''[39m, [32m''[39m ], [ [32m'X'[39m, [32m'X'[39m, [32m'X'[39m ], [ [32m''[39m, [32m''[39m, [32m''[39m ] ]
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+Waiting for the debugger to disconnect...
+/home/sketelone/repos/odin-tictactoe/script.js:57
+})();
+ ^
+
+SyntaxError: Unexpected token ')'
+[90m    at Object.compileFunction (node:vm:352:18)[39m
+[90m    at wrapSafe (node:internal/modules/cjs/loader:1033:15)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1069:27)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:981:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ] ]
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m'X'[39m ] ]
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m'X'[39m ] ]
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tictactoe[00m$ node script.js
+Debugger attached.
+[ [ [32m'X'[39m, [32m''[39m, [32m''[39m ], [ [32m''[39m, [32m'X'[39m, [32m''[39m ], [ [32m''[39m, [32m''[39m, [32m'X'[39m ] ]
+X wins!
+Waiting for the debugger to disconnect...
+]0;sketelone@sketelone: ~/repos/odin-tictactoe[01;32msketelone@sketelone[00m:[01;34m~/repos/odin-tict
