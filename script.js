@@ -2,6 +2,21 @@
 
 
 
+
+//create constants for referring to html elements.
+const start = document.getElementById('start-game');
+
+//when user hits start button, start the game
+start.addEventListener('click', function(event) {
+    game.startGame();
+    // displayBoard(gameBoard.getBoard());
+    gameBoard.display();
+})
+
+
+
+
+/*GAME LOGIC*/
 const Player = (name, piece) => {
     const getName = () => name;
     const getPiece = () => piece;
@@ -25,6 +40,10 @@ const gameBoard = (() => {
     const resetBoard = () => {
         board = [["","",""], ["","",""], ["","",""]];
     };
+
+    const display = () => {
+
+    }
 
     return {getBoard, updateTile, resetBoard};
 })();
@@ -81,6 +100,10 @@ const game = ((playerOne, playerTwo) => {
 
     return {checkWin, startGame, updateTurn};
 })();
+
+// const displayBoard = ((board) => {
+
+// })();
 
 gameBoard.resetBoard()
 gameBoard.updateTile(0,2,"X")
