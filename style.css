@@ -99,7 +99,12 @@ label {
 }
 
 .tile {
+    display: grid;
+    align-items: center;
+    justify-items: center;
     background-color: rgb(191, 222, 231);
+    font-size: 60px;
+    font-weight: bold;
 }
 
 .footer {
