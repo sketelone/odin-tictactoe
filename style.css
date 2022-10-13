@@ -29,6 +29,7 @@ body {
 }
 
 .game-alert {
+    max-width: 600px;
     padding: 10px;
     justify-self: center;
     font-family: 'Bigelow Rules', cursive;
@@ -36,6 +37,7 @@ body {
     font-weight:bold;
     letter-spacing: 0.1em;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .form-popup {

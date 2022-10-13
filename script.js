@@ -99,6 +99,7 @@ const gameBoard = (() => {
 
 const game = (() => {
     let win = false;
+    let tie = false;
     // let winner = "";
     let round = "";
     let turn = "";
@@ -126,6 +127,12 @@ const game = (() => {
                 win = true;
                 // winner = "X";
             }
+        }
+    }
+
+    const checkTie = (board) => {
+        if (win == false && round == 9) {
+            tie = true;
         }
     }
 
@@ -204,14 +211,23 @@ const game = (() => {
         var row = e.target.id[0];
         var col = e.target.id[1];
         console.log(row, col, turn.getPiece())
-        gameBoard.updateTile(row, col, turn.getPiece());
-        checkWin(gameBoard.getBoard());
-        if (win == true) {
-            // console.log(turn.getName() + " wins!")
-            displayAlert(turn.getName() + " wins!")
-            document.getElementById("reset").style.display = "block";
+        var t = document.getElementById(row + col)
+        if (t.textContent == "") {
+            gameBoard.updateTile(row, col, turn.getPiece());
+            checkWin(gameBoard.getBoard());
+            checkTie(gameBoard.getBoard());
+            if (win == true) {
+                // console.log(turn.getName() + " wins!")
+                displayAlert(turn.getName() + " wins!")
+                document.getElementById("reset").style.display = "block";
+            } else if (tie == true) {
+                displayAlert("Bollocks, it's a cat's game.")
+                document.getElementById("reset").style.display = "block";
+            } else {
+                updateTurn();
+            }
         } else {
-            updateTurn();
+            displayAlert("Now now, it's not nice to steal someone else's spot! Play somewhere else, " + turn.getName() +"!")
         }
 
     }
