@@ -32,7 +32,7 @@ body {
 .form-popup {
     display: none;
     position: fixed;
-    top: 200px;
+    top: 150px;
     z-index: 9;
 }
 
@@ -120,12 +120,12 @@ button {
 }
 
 #close-form {
-    padding: 10px;
+    padding: 0;
+    margin: -10px 0px -10px 0px;
     background: transparent;
     color: black;
     font-weight: bold;
     font-size: 36px;
-    align-self: end;
     justify-self: end;
 }
 

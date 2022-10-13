@@ -5,19 +5,18 @@
 
 //create constants for referring to html elements.
 const submit = document.getElementById('submit');
-const nameOne = document.getElementById('name1');
-const nameTwo = document.getElementById('name2');
-const pieceOne = document.getElementById('piece1');
-const pieceTwo = document.getElementById('piece2');
+const form = document.getElementById('game-form');
+// const nameOne = document.getElementById('name1');
+// const nameTwo = document.getElementById('name2');
 const inputs = document.querySelectorAll("input[type=text]");
-
+const radios = document.querySelectorAll("input[type=radio]");
 
 //when user hits start button, start the game
 submit.addEventListener('click', function(event) {
     event.preventDefault();
     var formValid = false;
     inputs.forEach(input => {
-        console.log(input, input.validity)
+        // console.log(input, input.validity)
         if (validate(input) == false) {
             console.log("nosubmit")
             formValid = false;
@@ -28,11 +27,48 @@ submit.addEventListener('click', function(event) {
     if (formValid == true) {
         game.startGame();
         // displayBoard(gameBoard.getBoard());
-        gameBoard.display();
+        // gameBoard.display();
         form.reset();
         closeForm();
     } 
 })
+
+//when piece is selected, automatically select piece for other player
+document.addEventListener('click', function(e) {
+    if(e.target && e.target.className == 'player-one-radio') {
+        var v = e.target.id;
+        var w = "";
+        if (v == "X") {
+            w = document.querySelector("#O.player-two-radio")
+            // console.log(w)
+        } else {
+            w = document.querySelector("#X.player-two-radio")
+        }
+        w.checked = true;
+    } else if (e.target && e.target.className == 'player-two-radio') {
+        var v = e.target.id;
+        var w = "";
+        if (v == "X") {
+            w = document.querySelector("#O.player-one-radio")
+            // console.log(w)
+        } else {
+            w = document.querySelector("#X.player-one-radio")
+        }
+        w.checked = true;
+    }
+})
+
+// //set player pieces based on radio input
+// radios.forEach( radio => {
+//     if (radio.className == 'player-one-radio' && radio.checked) {
+//         var one = radio.value;
+//     } else if (radio.className == 'player-two-radio' && radio.checked) {
+//         var two = radio.value;
+//     }
+//     return (one, two)
+// })
+
+
 
 
 
@@ -69,11 +105,15 @@ const gameBoard = (() => {
     return {getBoard, updateTile, resetBoard};
 })();
 
-const game = ((playerOne, playerTwo) => {
+const game = (() => {
     let win = false;
     let winner = "";
     let round = "";
     let turn = "";
+    let playerOne = "";
+    let playerTwo = "";
+
+
 
     const checkWin = (board) => {
         for (var i=0; i<2; i++) {
@@ -105,17 +145,36 @@ const game = ((playerOne, playerTwo) => {
     }
 
     const startGame = () => {
+        var nameOne = document.getElementById('name1').value;
+        var nameTwo = document.getElementById('name2').value;
+        var pieceOne = "";
+        var pieceTwo = "";
+        var radios = document.querySelectorAll("input[type=radio]");
+
+        radios.forEach( radio => {
+            if (radio.className == 'player-one-radio' && radio.checked) {
+                pieceOne = radio.value;
+            } else if (radio.className == 'player-two-radio' && radio.checked) {
+                pieceTwo = radio.value;
+            }
+        })
+        
+        // console.log(nameOne, pieceOne, nameTwo, pieceTwo)
+        playerOne = Player(nameOne, pieceOne);
+        playerTwo = Player(nameTwo, pieceTwo);
         round = 1;
-        turn = playerOne;
+        turn = playerOne.getName();
+        // console.log(playerOne.getName(), playerTwo.getName(), round, turn)
     }
 
-    const updateTurn = () => {
+    const updateTurn = (playerOne, playerTwo) => {
         if (turn == playerOne) {
             turn = playerTwo;
         } else {
             turn = playerOne;
         }
         round++;
+        console.log(round, turn)
         return turn;
     }
 
@@ -141,7 +200,7 @@ function closeForm() {
 /*VALIDATION*/
 //show error if input is invalid 
 function validate(i) {
-    console.log(i)
+    // console.log(i)
     if (i.validity.valid) {
         clearError(i);
     } else {
@@ -163,10 +222,10 @@ function showError(i) {
 }
 
 
-gameBoard.resetBoard()
-gameBoard.updateTile(0,2,"X")
-gameBoard.updateTile(1,1,"X")
-gameBoard.updateTile(2,0,"X")
-console.log(gameBoard.getBoard())
-game.checkWin(gameBoard.getBoard())
+// gameBoard.resetBoard()
+// gameBoard.updateTile(0,2,"X")
+// gameBoard.updateTile(1,1,"X")
+// gameBoard.updateTile(2,0,"X")
+// console.log(gameBoard.getBoard())
+// game.checkWin(gameBoard.getBoard())
 

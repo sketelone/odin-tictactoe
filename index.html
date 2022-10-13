@@ -17,7 +17,7 @@
         <button id="open-form" onclick="openForm()">LET'S PLAY</button>
     </div>
     <div class="form-popup" id="player-form">
-        <form action="" method="" novalidate>
+        <form id="game-form" action="" method="" novalidate>
             <button type="button" id="close-form" onclick="closeForm()">&times;</button>
             <fieldset class="player-one">
                 <legend>PLAYER ONE</legend>
@@ -26,14 +26,14 @@
                 <span class="name1_error" aria-live="polite"></span>
                 <label>PICK YOUR POISON</label>
                 <div class="group">
-                    <input type="radio" id="radio1" name="piece1" value="X">
-                    <label for="radio1">EXES</label>
+                    <input type="radio" class="player-one-radio" id="X" name="piece1" value="X">
+                    <label for="X">EXES</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="radio2" name="piece1" value="O">
-                    <label for="radio2">OHS</label>    
+                    <input type="radio" class="player-one-radio" id="O" name="piece1" value="O">
+                    <label for="O">OHS</label>    
                 </div>
-                <span class="radio1_error" aria-live="polite"></span>
+                <!-- <span class="radio1_error" aria-live="polite"></span> -->
             </fieldset>
             <fieldset class="player-two">
                 <legend>PLAYER TWO</legend>
@@ -42,14 +42,14 @@
                 <span class="name2_error" aria-live="polite"></span>
                 <label>PICK YOUR POISON</label>
                 <div class="group">
-                    <input type="radio" id="radio1" name="piece2" value="X">
-                    <label for="radio1">&Cross;</label>
+                    <input type="radio" class="player-two-radio" id="X" name="piece2" value="X">
+                    <label for="X">EXES</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="radio2" name="piece2" value="O">
-                    <label for="radio2">&bigcirc;</label>    
+                    <input type="radio" class="player-two-radio" id="O" name="piece2" value="O">
+                    <label for="O">OHS</label>    
                 </div>
-                <span class="radio2_error" aria-live="polite"></span>
+                <!-- <span class="radio2_error" aria-live="polite"></span> -->
             </fieldset>
             <button type="submit" id="submit">OK</button>
         </form>
