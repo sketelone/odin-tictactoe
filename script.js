@@ -5,12 +5,33 @@
 
 //create constants for referring to html elements.
 const submit = document.getElementById('submit');
+const nameOne = document.getElementById('name1');
+const nameTwo = document.getElementById('name2');
+const pieceOne = document.getElementById('piece1');
+const pieceTwo = document.getElementById('piece2');
+const inputs = document.querySelectorAll("input[type=text]");
+
 
 //when user hits start button, start the game
 submit.addEventListener('click', function(event) {
-    game.startGame();
-    // displayBoard(gameBoard.getBoard());
-    gameBoard.display();
+    event.preventDefault();
+    var formValid = false;
+    inputs.forEach(input => {
+        console.log(input, input.validity)
+        if (validate(input) == false) {
+            console.log("nosubmit")
+            formValid = false;
+        } else {
+            formValid = true;
+        }
+    }) 
+    if (formValid == true) {
+        game.startGame();
+        // displayBoard(gameBoard.getBoard());
+        gameBoard.display();
+        form.reset();
+        closeForm();
+    } 
 })
 
 

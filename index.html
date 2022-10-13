@@ -17,12 +17,13 @@
         <button id="open-form" onclick="openForm()">LET'S PLAY</button>
     </div>
     <div class="form-popup" id="player-form">
-        <form action="" method="">
+        <form action="" method="" novalidate>
             <button type="button" id="close-form" onclick="closeForm()">&times;</button>
             <fieldset class="player-one">
                 <legend>PLAYER ONE</legend>
-                <label for="name">NAME</label>
-                <input type="text" id="name" name="name" autocomplete="off" required>
+                <label for="name1">NAME</label>
+                <input type="text" id="name1" name="name1" autocomplete="off" required>
+                <span class="name1_error" aria-live="polite"></span>
                 <label>PICK YOUR POISON</label>
                 <div class="group">
                     <input type="radio" id="radio1" name="piece1" value="X">
@@ -32,11 +33,13 @@
                     <input type="radio" id="radio2" name="piece1" value="O">
                     <label for="radio2">OHS</label>    
                 </div>
+                <span class="radio1_error" aria-live="polite"></span>
             </fieldset>
             <fieldset class="player-two">
                 <legend>PLAYER TWO</legend>
-                <label for="name">NAME</label>
-                <input type="text" id="name" name="name" autocomplete="off" required>
+                <label for="name2">NAME</label>
+                <input type="text" id="name2" name="name2" autocomplete="off" required>
+                <span class="name2_error" aria-live="polite"></span>
                 <label>PICK YOUR POISON</label>
                 <div class="group">
                     <input type="radio" id="radio1" name="piece2" value="X">
@@ -46,6 +49,7 @@
                     <input type="radio" id="radio2" name="piece2" value="O">
                     <label for="radio2">&bigcirc;</label>    
                 </div>
+                <span class="radio2_error" aria-live="polite"></span>
             </fieldset>
             <button type="submit" id="submit">OK</button>
         </form>
