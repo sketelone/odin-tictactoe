@@ -1,13 +1,8 @@
 /*This code .*/
 
-
-
-
 //create constants for referring to html elements.
 const submit = document.getElementById('submit');
 const form = document.getElementById('game-form');
-// const nameOne = document.getElementById('name1');
-// const nameTwo = document.getElementById('name2');
 const inputs = document.querySelectorAll("input[type=text]");
 const radios = document.querySelectorAll("input[type=radio]");
 const tiles = document.querySelectorAll(".tile");
@@ -18,7 +13,7 @@ submit.addEventListener('click', function(event) {
     var formValid = false;
     inputs.forEach(input => {
         // console.log(input, input.validity)
-        if (validate(input) == false) {
+        if (Form.validate(input) == false) {
             console.log("nosubmit")
             formValid = false;
         } else {
@@ -26,7 +21,7 @@ submit.addEventListener('click', function(event) {
         }
     }) 
     if (formValid == true) {
-        closeForm();
+        Form.close();
         document.getElementById("open-form").style.display = "none";
         game.startGame();
         form.reset();
@@ -79,7 +74,6 @@ const gameBoard = (() => {
         board[row][col] = piece;
         // console.log(board)
         var t = document.getElementById(row + col)
-        // t.textContent = "";
         t.textContent = piece;
     };
     
@@ -189,25 +183,8 @@ const game = (() => {
         v.textContent = alert;
     }
 
-    // const runGame = (e) => {
-    //     var row = e.target.id[0];
-    //     var col = e.target.id[1];
-    //     console.log(row, col, turn.getPiece())
-    //     gameBoard.updateTile(row, col, turn.getPiece());
-    //     checkWin(gameBoard.getBoard());
-    //     if (win == true) {
-    //         // console.log(turn.getName() + " wins!")
-    //         displayAlert(turn.getName() + " wins!")
-    //         document.getElementById("reset").style.display = "block";
-    //     } else {
-    //         updateTurn();
-    //     }
-
-    // }
-
 
     const playGame = (e) => {
-        // startGame();
         var row = e.target.id[0];
         var col = e.target.id[1];
         console.log(row, col, turn.getPiece())
@@ -238,36 +215,37 @@ const game = (() => {
 
 
 /*FORM CONTROLS*/
-//open form
-function openForm() {
-    document.getElementById("player-form").style.display = "block";
-}
-
-//close form
-function closeForm() {
-    document.getElementById("player-form").style.display = "none";
-}
-
-/*VALIDATION*/
-//show error if input is invalid 
-function validate(i) {
-    // console.log(i)
-    if (i.validity.valid) {
-        clearError(i);
-    } else {
-        showError(i);
-        return false
+const Form = (() => {
+    //open form
+    const open = () => {
+        document.getElementById("player-form").style.display = "block";
     }
-}
 
-//clear errors if input is updated to be valid
-function clearError(i) {
-    var inputError = document.querySelector("." + i.name + "_error");
-    inputError.textContent = "";
-}
+    //close form
+    const close = () => {
+        document.getElementById("player-form").style.display = "none";
+    }
 
-//show validation message as error
-function showError(i) {
-    var inputError = document.querySelector("." + i.name + "_error");
-    inputError.textContent = i.validationMessage;
-}
+    //show error if input is invalid 
+    const validate = (i) => {
+        if (i.validity.valid) {
+            clearError(i);
+        } else {
+            showError(i);
+            return false
+        }
+    }
+
+    //clear errors if input is updated to be valid
+    const clearError = (i) => {
+        var inputError = document.querySelector("." + i.name + "_error");
+        inputError.textContent = "";
+    }
+
+    //show validation message as error
+    const showError = (i) => {
+        var inputError = document.querySelector("." + i.name + "_error");
+        inputError.textContent = i.validationMessage;
+    }
+    return {open, close, validate}
+})();

@@ -14,13 +14,13 @@
 <body>
     <div class="header">
         TIC TAC TOE
-        <button id="open-form" onclick="openForm()">LET'S PLAY</button>
-        <button id="reset" onclick="game.reset(); openForm()">PLAY AGAIN?</button>
+        <button id="open-form" onclick="Form.open()">LET'S PLAY</button>
+        <button id="reset" onclick="game.reset(); Form.open()">PLAY AGAIN?</button>
         <div class="game-alert"></div>
     </div>
     <div class="form-popup" id="player-form">
         <form id="game-form" action="" method="" novalidate>
-            <button type="button" id="close-form" onclick="closeForm()">&times;</button>
+            <button type="button" id="close-form" onclick="Form.close()">&times;</button>
             <fieldset class="player-one">
                 <legend>PLAYER ONE</legend>
                 <label for="name1">NAME</label>
