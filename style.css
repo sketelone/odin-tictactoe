@@ -28,6 +28,15 @@ body {
     font-weight: bolder;
 }
 
+.game-alert {
+    padding: 10px;
+    justify-self: center;
+    font-family: 'Bigelow Rules', cursive;
+    font-size: 36px;
+    font-weight:bold;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+}
 
 .form-popup {
     display: none;
@@ -102,11 +111,6 @@ label {
 }
 
 
-
-
-
-
-
 button {
     justify-self: center;
     align-self: center;
@@ -117,6 +121,10 @@ button {
     border-radius: 6px;
     color: white;
     letter-spacing: 0.2em;
+}
+
+#reset {
+    display: none;
 }
 
 #close-form {

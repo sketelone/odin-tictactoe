@@ -10,6 +10,7 @@ const form = document.getElementById('game-form');
 // const nameTwo = document.getElementById('name2');
 const inputs = document.querySelectorAll("input[type=text]");
 const radios = document.querySelectorAll("input[type=radio]");
+const tiles = document.querySelectorAll(".tile");
 
 //when user hits start button, start the game
 submit.addEventListener('click', function(event) {
@@ -25,11 +26,10 @@ submit.addEventListener('click', function(event) {
         }
     }) 
     if (formValid == true) {
-        game.startGame();
-        // displayBoard(gameBoard.getBoard());
-        // gameBoard.display();
-        form.reset();
         closeForm();
+        document.getElementById("open-form").style.display = "none";
+        game.startGame();
+        form.reset();
     } 
 })
 
@@ -58,20 +58,6 @@ document.addEventListener('click', function(e) {
     }
 })
 
-// //set player pieces based on radio input
-// radios.forEach( radio => {
-//     if (radio.className == 'player-one-radio' && radio.checked) {
-//         var one = radio.value;
-//     } else if (radio.className == 'player-two-radio' && radio.checked) {
-//         var two = radio.value;
-//     }
-//     return (one, two)
-// })
-
-
-
-
-
 
 /*GAME LOGIC*/
 const Player = (name, piece) => {
@@ -89,58 +75,57 @@ const gameBoard = (() => {
         if (row > 2 || col > 2) {
             return false;
         }
-        // console.log(row, col, piece)
+        console.log(row, col, piece)
         board[row][col] = piece;
         // console.log(board)
+        var t = document.getElementById(row + col)
+        // t.textContent = "";
+        t.textContent = piece;
     };
     
-    const resetBoard = () => {
+    const reset = () => {
         board = [["","",""], ["","",""], ["","",""]];
+        tiles.forEach( tile => {
+            tile.textContent = "";
+        })
     };
 
     const display = () => {
 
     }
 
-    return {getBoard, updateTile, resetBoard};
+    return {getBoard, updateTile, reset};
 })();
 
 const game = (() => {
     let win = false;
-    let winner = "";
+    // let winner = "";
     let round = "";
     let turn = "";
     let playerOne = "";
     let playerTwo = "";
 
-
-
     const checkWin = (board) => {
         for (var i=0; i<2; i++) {
             if (board[i].every(num => num == "O")) {
                 win = true;
-                winner = "O";
+                // winner = "O";
             } else if (board[i].every(num => num == "X")) {
                 win = true;
-                winner = "X";
+                // winner = "X";
             } else if (board[0][i] == "O" && board[1][i] == "O" && board[2][i] == "O") {
                 win = true;
-                winner = "O";
+                // winner = "O";
             } else if (board[0][i] == "X" && board[1][i] == "X" && board[2][i] == "X") {
                 win = true;
-                winner = "X";
+                // winner = "X";
             } else if (board[1][1] == "O" && (board[0][0] == "O" && board[2][2] == "O" || board[0][2] == "O" && board[2][0] == "O")) {
                 win = true;
-                winner = "O";
+                // winner = "O";
             } else if (board[1][1] == "X" && (board[0][0] == "X" && board[2][2] == "X" || board[0][2] == "X" && board[2][0] == "X")) {
                 win = true;
-                winner = "X";
+                // winner = "X";
             }
-        }
-        if (win == true) {
-            return winner;
-        } else {
-            return false;
         }
     }
 
@@ -159,31 +144,81 @@ const game = (() => {
             }
         })
         
-        // console.log(nameOne, pieceOne, nameTwo, pieceTwo)
+        console.log(nameOne, pieceOne, nameTwo, pieceTwo)
         playerOne = Player(nameOne, pieceOne);
         playerTwo = Player(nameTwo, pieceTwo);
         round = 1;
-        turn = playerOne.getName();
-        // console.log(playerOne.getName(), playerTwo.getName(), round, turn)
+        turn = playerOne;
+        displayAlert("Your move, " + turn.getName() + "!");
+        // console.log(playerOne.getName(), playerOne.getPiece(), playerTwo.getName(), playerTwo.getPiece(), round)
+        tiles.forEach( tile => {
+            tile.addEventListener('click', playGame)
+        })
     }
 
-    const updateTurn = (playerOne, playerTwo) => {
+    const reset = () => {
+        displayAlert("");
+        gameBoard.reset();
+        win = false;
+        tiles.forEach(tile => {
+            tile.removeEventListener('click', playGame);
+        })
+    }
+
+    const updateTurn = () => {
         if (turn == playerOne) {
             turn = playerTwo;
         } else {
             turn = playerOne;
         }
         round++;
-        console.log(round, turn)
-        return turn;
+        displayAlert("Your move, " + turn.getName() + "!");
     }
 
-    return {checkWin, startGame, updateTurn};
+    const displayAlert = (alert) => {
+        var v = document.querySelector(".game-alert");
+        // console.log(v)
+        v.textContent = "";
+        v.textContent = alert;
+    }
+
+    // const runGame = (e) => {
+    //     var row = e.target.id[0];
+    //     var col = e.target.id[1];
+    //     console.log(row, col, turn.getPiece())
+    //     gameBoard.updateTile(row, col, turn.getPiece());
+    //     checkWin(gameBoard.getBoard());
+    //     if (win == true) {
+    //         // console.log(turn.getName() + " wins!")
+    //         displayAlert(turn.getName() + " wins!")
+    //         document.getElementById("reset").style.display = "block";
+    //     } else {
+    //         updateTurn();
+    //     }
+
+    // }
+
+
+    const playGame = (e) => {
+        // startGame();
+        var row = e.target.id[0];
+        var col = e.target.id[1];
+        console.log(row, col, turn.getPiece())
+        gameBoard.updateTile(row, col, turn.getPiece());
+        checkWin(gameBoard.getBoard());
+        if (win == true) {
+            // console.log(turn.getName() + " wins!")
+            displayAlert(turn.getName() + " wins!")
+            document.getElementById("reset").style.display = "block";
+        } else {
+            updateTurn();
+        }
+
+    }
+
+    return {reset, startGame};
 })();
 
-// const displayBoard = ((board) => {
-
-// })();
 
 
 /*FORM CONTROLS*/
@@ -220,12 +255,3 @@ function showError(i) {
     var inputError = document.querySelector("." + i.name + "_error");
     inputError.textContent = i.validationMessage;
 }
-
-
-// gameBoard.resetBoard()
-// gameBoard.updateTile(0,2,"X")
-// gameBoard.updateTile(1,1,"X")
-// gameBoard.updateTile(2,0,"X")
-// console.log(gameBoard.getBoard())
-// game.checkWin(gameBoard.getBoard())
-
