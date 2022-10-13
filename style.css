@@ -28,6 +28,55 @@ body {
     font-weight: bolder;
 }
 
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 200px;
+    z-index: 9;
+}
+
+form {
+    display: grid;
+    gap: 20px;
+    padding:30px;
+    background-color:  #f7fff9;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+legend {
+    font-family: 'Bigelow Rules', cursive;
+    font-size: 24px;
+    font-weight:bold;
+    letter-spacing: 0.1em;
+}
+
+fieldset {
+    display: grid;
+    gap: 20px;
+    /* align-items: center; */
+    justify-items: center;
+    padding: 30px;
+    border:solid black 3px;
+}
+
+label {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+}
+
+.group {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    justify-self: center;
+}
+
+.group label {
+    font-weight: bolder;
+    padding: 10px;
+}
+
 .board {
     border: solid 10px rgb(128, 71, 128);
     grid-column: 2 / 3;
@@ -42,7 +91,15 @@ body {
     background-color: rgb(191, 222, 231);
 }
 
-
+.footer {
+    display: grid;
+    grid-template-columns: 250px auto;
+    justify-items: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+}
 
 
 
@@ -62,17 +119,30 @@ button {
     letter-spacing: 0.2em;
 }
 
+#close-form {
+    padding: 10px;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 36px;
+    align-self: end;
+    justify-self: end;
+}
+
 button:hover {
     opacity: 0.7;
 }
 
-
-.footer {
-    display: grid;
-    grid-template-columns: 250px auto;
-    justify-items: center;
-    align-items: center;
-    text-transform: uppercase;
+span {
+    display:block;
+    text-align: center;
+    width:225px;
     font-size: 10px;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
+    color:red;
+    border: none;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    margin-top: -40px;
 }
+

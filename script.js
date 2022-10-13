@@ -4,10 +4,10 @@
 
 
 //create constants for referring to html elements.
-const start = document.getElementById('start-game');
+const submit = document.getElementById('submit');
 
 //when user hits start button, start the game
-start.addEventListener('click', function(event) {
+submit.addEventListener('click', function(event) {
     game.startGame();
     // displayBoard(gameBoard.getBoard());
     gameBoard.display();
@@ -105,9 +105,47 @@ const game = ((playerOne, playerTwo) => {
 
 // })();
 
+
+/*FORM CONTROLS*/
+//open form
+function openForm() {
+    document.getElementById("player-form").style.display = "block";
+}
+
+//close form
+function closeForm() {
+    document.getElementById("player-form").style.display = "none";
+}
+
+/*VALIDATION*/
+//show error if input is invalid 
+function validate(i) {
+    console.log(i)
+    if (i.validity.valid) {
+        clearError(i);
+    } else {
+        showError(i);
+        return false
+    }
+}
+
+//clear errors if input is updated to be valid
+function clearError(i) {
+    var inputError = document.querySelector("." + i.name + "_error");
+    inputError.textContent = "";
+}
+
+//show validation message as error
+function showError(i) {
+    var inputError = document.querySelector("." + i.name + "_error");
+    inputError.textContent = i.validationMessage;
+}
+
+
 gameBoard.resetBoard()
 gameBoard.updateTile(0,2,"X")
 gameBoard.updateTile(1,1,"X")
 gameBoard.updateTile(2,0,"X")
 console.log(gameBoard.getBoard())
 game.checkWin(gameBoard.getBoard())
+

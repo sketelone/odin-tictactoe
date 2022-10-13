@@ -14,7 +14,41 @@
 <body>
     <div class="header">
         TIC TAC TOE
-        <button id="start-game">LET'S PLAY</button>
+        <button id="open-form" onclick="openForm()">LET'S PLAY</button>
+    </div>
+    <div class="form-popup" id="player-form">
+        <form action="" method="">
+            <button type="button" id="close-form" onclick="closeForm()">&times;</button>
+            <fieldset class="player-one">
+                <legend>PLAYER ONE</legend>
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" autocomplete="off" required>
+                <label>PICK YOUR POISON</label>
+                <div class="group">
+                    <input type="radio" id="radio1" name="piece1" value="X">
+                    <label for="radio1">EXES</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="radio2" name="piece1" value="O">
+                    <label for="radio2">OHS</label>    
+                </div>
+            </fieldset>
+            <fieldset class="player-two">
+                <legend>PLAYER TWO</legend>
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" autocomplete="off" required>
+                <label>PICK YOUR POISON</label>
+                <div class="group">
+                    <input type="radio" id="radio1" name="piece2" value="X">
+                    <label for="radio1">&Cross;</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="radio2" name="piece2" value="O">
+                    <label for="radio2">&bigcirc;</label>    
+                </div>
+            </fieldset>
+            <button type="submit" id="submit">OK</button>
+        </form>
     </div>
     <div class="board">
         <div class="tile" id = "00"></div>
