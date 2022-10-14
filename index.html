@@ -28,14 +28,13 @@
                 <span class="name1_error" aria-live="polite"></span>
                 <label>PICK YOUR POISON</label>
                 <div class="group">
-                    <input type="radio" class="player-one-radio" id="X" name="piece1" value="X">
+                    <input type="radio" class="player-one-radio" id="X" name="piece1" value="X" checked="true">
                     <label for="X">EXES</label>
                 </div>
                 <div class="group">
                     <input type="radio" class="player-one-radio" id="O" name="piece1" value="O">
                     <label for="O">OHS</label>    
                 </div>
-                <!-- <span class="radio1_error" aria-live="polite"></span> -->
             </fieldset>
             <fieldset class="player-two">
                 <legend>PLAYER TWO</legend>
@@ -48,10 +47,13 @@
                     <label for="X">EXES</label>
                 </div>
                 <div class="group">
-                    <input type="radio" class="player-two-radio" id="O" name="piece2" value="O">
+                    <input type="radio" class="player-two-radio" id="O" name="piece2" value="O" checked="true">
                     <label for="O">OHS</label>    
                 </div>
-                <!-- <span class="radio2_error" aria-live="polite"></span> -->
+            </fieldset>
+            <fieldset class="computer">
+                <label>PLAY AGAINST COMPUTER</label>
+                <input type="checkbox" id="computer" name="computer">
             </fieldset>
             <button type="submit" id="submit">OK</button>
         </form>
