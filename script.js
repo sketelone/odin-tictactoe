@@ -211,17 +211,27 @@ const game = (() => {
 
     const computerTurn = () => {
         // console.log("computer turn")
-        console.log(AI.minimax(gameBoard.getBoard()))
-
-        //random turn
-        var row = Math.round(Math.random()*2).toString();
-        var col = Math.round(Math.random()*2).toString();
-        var t = document.getElementById(row + col)
+        //AI turn
+        console.log(AI.getMove(gameBoard.getBoard()))
+        var index = AI.getMove(gameBoard.getBoard());
+        var t = document.getElementById(index)
         while (t.textContent !== "") {
-            row = Math.round(Math.random()*2).toString();
-            col = Math.round(Math.random()*2).toString();
-            t = document.getElementById(row + col)
+            index = AI.getMove(gameBoard.getBoard())
+            document.getElementById(index)
         } 
+        var row = index[0];
+        var col = index[1];
+
+        // //random turn
+        // var row = Math.round(Math.random()*2).toString();
+        // var col = Math.round(Math.random()*2).toString();
+
+        // var t = document.getElementById(row + col)
+        // while (t.textContent !== "") {
+        //     row = Math.round(Math.random()*2).toString();
+        //     col = Math.round(Math.random()*2).toString();
+        //     t = document.getElementById(row + col)
+        // } 
 
         gameBoard.updateTile(row, col, turn.getPiece());
         checkWin(gameBoard.getBoard());
@@ -285,9 +295,27 @@ const game = (() => {
 
 /*AI CONTROLS*/
 const AI = (() => {
-    console.log(game.getPlayers())
-    let playerOne = game.getPlayers()[0];
-    let playerTwo = game.getPlayers()[1];
+    const getMove = (board) => {
+        var row = "";
+        var col = "";
+        var value = minimax(board);
+        console.log(value)
+        if (value == -Infinity) {
+            row = Math.round(Math.random()*2).toString();
+            col = Math.round(Math.random()*2).toString();
+        } else if (value == Infinity) {
+            row = Math.round(Math.random()*2).toString();
+            col = Math.round(Math.random()*2).toString();
+        } else if (value == 20) {
+            row = "1";
+            col = "1";
+        } else {
+            row = Math.round(Math.random()*2).toString();
+            col = Math.round(Math.random()*2).toString();
+        }
+        console.log(row, col)
+        return (row+col)
+    }
 
     const minimax = (board) => {
         var value = [];
@@ -304,53 +332,47 @@ const AI = (() => {
     }
 
     const playerWin = (board) => {
-        if (playerOne == "") {
-            return false;
-        } else {
-            for (var i=0; i<3; i++) {
-                const filtered = board[i].filter(num => num == playerOne.getPiece());
-                if (filtered.length == 2) {
-                    return true;
-                } else if (board[0][i] == playerOne.getPiece() && board[1][i] == playerOne.getPiece()) {
-                    return true;
-                } else if (board[1][i] == playerOne.getPiece() && board[2][i] == playerOne.getPiece()) {
-                    return true;
-                } else if (board[0][i] == playerOne.getPiece() && board[2][i] == playerOne.getPiece()) {
-                    return true;
-                } else if (board[1][1] == playerOne.getPiece() && 
-                (board[0][0] == playerOne.getPiece() || board[2][2] == playerOne.getPiece() || 
-                board[0][2] == playerOne.getPiece() || board[2][0] == playerOne.getPiece())) {
-                    return true;
-                }
+        var playerOne = game.getPlayers()[0];
+        for (var i=0; i<3; i++) {
+            const filtered = board[i].filter(num => num == playerOne.getPiece());
+            if (filtered.length == 2) {
+                return true;
+            } else if (board[0][i] == playerOne.getPiece() && board[1][i] == playerOne.getPiece()) {
+                return true;
+            } else if (board[1][i] == playerOne.getPiece() && board[2][i] == playerOne.getPiece()) {
+                return true;
+            } else if (board[0][i] == playerOne.getPiece() && board[2][i] == playerOne.getPiece()) {
+                return true;
+            } else if (board[1][1] == playerOne.getPiece() && 
+            (board[0][0] == playerOne.getPiece() || board[2][2] == playerOne.getPiece() || 
+            board[0][2] == playerOne.getPiece() || board[2][0] == playerOne.getPiece())) {
+                return true;
             }
-        }    
+        }
+                
     }
 
     const computerWin = (board) => {
-        if (playerOne == "") {
-            return false;
-        } else {
-            for (var i=0; i<3; i++) {
-                const filtered = board[i].filter(num => num == playerTwo.getPiece());
-                if (filtered.length == 2) {
-                    return true;
-                } else if (board[0][i] == playerTwo.getPiece() && board[1][i] == playerTwo.getPiece()) {
-                    return true;
-                } else if (board[1][i] == playerTwo.getPiece() && board[2][i] == playerTwo.getPiece()) {
-                    return true;
-                } else if (board[0][i] == playerTwo.getPiece() && board[2][i] == playerTwo.getPiece()) {
-                    return true;
-                } else if (board[1][1] == playerTwo.getPiece() && 
-                (board[0][0] == playerTwo.getPiece() || board[2][2] == playerTwo.getPiece() || 
-                board[0][2] == playerTwo.getPiece() || board[2][0] == playerTwo.getPiece())) {
-                    return true;
-                }
-            }   
-        }         
+        var playerTwo = game.getPlayers()[1];
+        for (var i=0; i<3; i++) {
+            const filtered = board[i].filter(num => num == playerTwo.getPiece());
+            if (filtered.length == 2) {
+                return true;
+            } else if (board[0][i] == playerTwo.getPiece() && board[1][i] == playerTwo.getPiece()) {
+                return true;
+            } else if (board[1][i] == playerTwo.getPiece() && board[2][i] == playerTwo.getPiece()) {
+                return true;
+            } else if (board[0][i] == playerTwo.getPiece() && board[2][i] == playerTwo.getPiece()) {
+                return true;
+            } else if (board[1][1] == playerTwo.getPiece() && 
+            (board[0][0] == playerTwo.getPiece() || board[2][2] == playerTwo.getPiece() || 
+            board[0][2] == playerTwo.getPiece() || board[2][0] == playerTwo.getPiece())) {
+                return true;
+            }
+        }            
     }
 
     const computerMiddle = (board) => {
-        console.log(board[1][1].textContent)
         if (board[1][1].textContent == undefined) {
             return true;
         }
@@ -362,7 +384,7 @@ const AI = (() => {
         }
     }
 
-    return {minimax}
+    return {getMove}
 
 })();
 
