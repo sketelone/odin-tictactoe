@@ -455,9 +455,13 @@ const AI = (() => {
                 console.log(row, col)
                 index = [row,col];
                 return index;
-            } else if (board[1][1] == maximizer.getPiece() && (board[0][0] == "" || board[2][2] == "" || 
-            board[0][2] == "" || board[2][0] == "")) {
-                if (board[0].includes(maximizer.getPiece())) {
+            } else if (board[1][1] == maximizer.getPiece()) {
+                var corners = [board[0][0], board[0][2], board[2][0], board[2][2]];
+                var filtered = corners.filter(num => num == "")
+                console.log(filtered)
+                if (filtered.length < 2) {
+                    break;
+                } else if (board[0].includes(maximizer.getPiece())) {
                     row = 2;
                 } else {
                     row = 0;
