@@ -1,4 +1,6 @@
-/*This code .*/
+/*This code creates a tic tac toe game that can be accessed via the webpage.
+The game includes two player options, as well as the option to play against
+an AI computer.*/
 
 //create constants for referring to html elements.
 const submit = document.getElementById('submit');
@@ -28,6 +30,7 @@ submit.addEventListener('click', function(event) {
     } 
 })
 
+//when user selects play computer, remove player 2 inputs
 computerButton.addEventListener('click', function(e) {
     if (e.target.checked == true) {
         document.querySelector(".player-two").style.display = "none";
@@ -123,8 +126,8 @@ const game = (() => {
 
     const checkWin = (board) => {
         var transpose = gameBoard.getTranspose(board);
-        console.log(board)
-        console.log(transpose)
+        // console.log(board)
+        // console.log(transpose)
         for (var i=0; i<3; i++) {
             if (board[i].every(num => num == "O")) {
                 win = true;
@@ -140,7 +143,7 @@ const game = (() => {
                 win = true;
             }
         }
-        console.log(win)
+        // console.log(win)
     }
 
     const checkTie = (board) => {
@@ -152,10 +155,10 @@ const game = (() => {
     const startGame = () => {
         if (document.getElementById('computer').checked) {
             startComputerGame();
-            console.log("start computer game")
+            // console.log("start computer game")
         } else {
             startHumanGame();
-            console.log("start human game")
+            // console.log("start human game")
         }
     }
 
@@ -223,19 +226,20 @@ const game = (() => {
             turn = playerOne;
         }
         round++;
+        // console.log(round)
         displayAlert("Your move, " + turn.getName() + "!");
     }
 
     const computerTurn = () => {
         // console.log("computer turn")
         //AI turn
-        var index = AI.getMove(gameBoard.getBoard());
+        var index = AI.minimax(gameBoard.getBoard());
         var t = document.getElementById(index)
-        console.log(index)
+        // console.log(index)
         while (t.textContent !== "") {
-            index = AI.getMove(gameBoard.getBoard())
+            index = AI.minimax(gameBoard.getBoard())
             t = document.getElementById(index)
-            console.log(index)
+            // console.log(index)
         } 
         var row = index[0];
         var col = index[1];
@@ -269,13 +273,12 @@ const game = (() => {
     const playGame = (e) => {
         var row = e.target.id[0];
         var col = e.target.id[1];
-        console.log(row, col, turn.getPiece())
+        // console.log(row, col, turn.getPiece())
         var t = document.getElementById(row + col)
         if (t.textContent == "") {
             gameBoard.updateTile(row, col, turn.getPiece());
             checkWin(gameBoard.getBoard());
             checkTie(gameBoard.getBoard());
-            console.log(win, tie)
             if (win == true) {
                 // console.log(turn.getName() + " wins!")
                 displayAlert(turn.getName() + " wins!")
@@ -312,179 +315,100 @@ const game = (() => {
     return {getPlayers, reset, startGame};
 })();
 
-/*AI CONTROLS*/
+//AI module
 const AI = (() => {
-    const getMove = (board) => {
-        var index = ""
-        var value = minimax(board);
-        var playerOne = game.getPlayers()[0];
-        var playerTwo = game.getPlayers()[1];
-        console.log(value)
-        if (value == -Infinity) {
-            console.log(getCriticalTile(board, playerOne))
-            row = getCriticalTile(board, playerOne)[0]
-            col = getCriticalTile(board, playerOne)[1]
-        } else if (value == Infinity) {
-            row = getCriticalTile(board, playerTwo)[0]
-            col = getCriticalTile(board, playerTwo)[1]
-        } else if (value == 20) {
-            row = 1;
-            col = 1;
-        } else {
-            for (var i=0; i<3; i++) {
-                const filtered = board[i].filter(num => num == playerTwo.getPiece());
-                if (filtered.length == 1) {
-                    const filtered = board[i].filter(num => num == "")
-                    if (filtered.length == 2) {
-                        row = i;
-                        var v = board[i].indexOf(playerTwo.getPiece());
-                        if (v > 0) {
-                            col = v - 1;
-                        } else {
-                            col = v + 1; 
-                        }
-                    }
-                }
-            }
-        }
-        console.log(row.toString()+col.toString())
-        return (row.toString()+col.toString())
-
-    }
-
     const minimax = (board) => {
-        var value = [];
-        if (playerWin(board)) {
-            value.push(-Infinity);
-        } else if (computerWin(board)) {
-            value.push(Infinity);
-        } else if (computerMiddle(board)) {
-            value.push(20);
-        } else if (computerNotMiddle(board)) {
-            value.push(-20);
-        }    
-        return (Math.max(value))
-    }
-
-    const playerWin = (board) => {
-        var playerOne = game.getPlayers()[0];
-        var playerTwo = game.getPlayers()[1];
-        var transpose = gameBoard.getTranspose(board);
-
-        for (var i=0; i<3; i++) {
-            const filteredOne = board[i].filter(num => num == playerOne.getPiece());
-            const filteredTwo = board[i].filter(num => num == playerTwo.getPiece());
-            const filteredTransposeOne = transpose[i].filter(num => num == playerOne.getPiece());
-            const filteredTransposeTwo = transpose[i].filter(num => num == playerTwo.getPiece());
-            if (filteredOne.length == 2 && filteredTwo.length == 0) {
-                return true;
-            } else if (filteredTransposeOne.length == 2 && filteredTransposeTwo.length == 0) {
-                return true;
-            } else if (board[1][1] == playerOne.getPiece() && 
-            (board[0][0] == playerOne.getPiece() || board[2][2] == playerOne.getPiece() || 
-            board[0][2] == playerOne.getPiece() || board[2][0] == playerOne.getPiece())) {
-                return true;
-            }
-        }
-                
-    }
-
-    const computerWin = (board) => {
-        var playerOne = game.getPlayers()[0];
-        var playerTwo = game.getPlayers()[1];
-        var transpose = gameBoard.getTranspose(board);
-
-        for (var i=0; i<3; i++) {
-            const filteredOne = board[i].filter(num => num == playerOne.getPiece());
-            const filteredTwo = board[i].filter(num => num == playerTwo.getPiece());
-            const filteredTransposeOne = transpose[i].filter(num => num == playerOne.getPiece());
-            const filteredTransposeTwo = transpose[i].filter(num => num == playerTwo.getPiece());
-            if (filteredTwo.length == 2 && filteredOne.length == 0) {
-                return true;
-            } else if (filteredTransposeTwo.length == 2 && filteredTransposeOne.length == 0) {
-                return true;
-            } else if (board[1][1] == playerTwo.getPiece() && 
-            (board[0][0] == playerTwo.getPiece() || board[2][2] == playerTwo.getPiece() || 
-            board[0][2] == playerTwo.getPiece() || board[2][0] == playerTwo.getPiece())) {
-                return true;
-            }
-        }            
-    }
-
-    const computerMiddle = (board) => {
-        if (board[1][1] == "") {
-            return true;
-        }
-    }
-
-    const computerNotMiddle = (board) => {
-        if (board[1][1] !== "") {
-            return true;
-        }
-    }
-
-    const getCriticalTile = (board, player) => {
-        console.log("get critical tile")
+        var valueBoard = getBoardValue(board);
         var row = "";
         var col = "";
         var index = "";
-        var maximizer = player;
-        var minimizer = "";
-        var transpose = gameBoard.getTranspose(board);
+        var temp = 0;
 
-        if (maximizer == game.getPlayers()[0]) {
-            minimizer = game.getPlayers()[1];
-        } else {
-            minimizer = game.getPlayers()[0];
-        }
-
-        for (var i=0; i<3; i++) {
-            const filteredMax = board[i].filter(num => num == maximizer.getPiece());
-            const filteredMin = board[i].filter(num => num == minimizer.getPiece());
-            const filteredTransposeMax = transpose[i].filter(num => num == maximizer.getPiece());
-            const filteredTransposeMin = transpose[i].filter(num => num == minimizer.getPiece());
-            if (filteredMax.length == 2 && filteredMin.length == 0) {
-                row = i;
-                col = board[i].indexOf("");
-                console.log(row, col)
-                index = [row,col];
-                return index;
-            } else if (filteredTransposeMax.length == 2 && filteredTransposeMin.length == 0) {
-                col = i;
-                row = transpose[i].indexOf("");
-                console.log(row, col)
-                index = [row,col];
-                return index;
-            } else if (board[1][1] == maximizer.getPiece()) {
-                var corners = [board[0][0], board[0][2], board[2][0], board[2][2]];
-                var filtered = corners.filter(num => num == "")
-                console.log(filtered)
-                if (filtered.length < 2) {
-                    break;
-                } else if (board[0].includes(maximizer.getPiece())) {
-                    row = 2;
-                } else {
-                    row = 0;
+        for (var i=0;i<3;i++) {
+            for (var j=0;j<3;j++) {
+                if (valueBoard[i][j] > temp) {
+                    row = i;
+                    col = j;
+                    temp = valueBoard[i][j];
                 }
-                if (transpose[0].includes(maximizer.getPiece())) {
-                    col = 2;
-                } else {
-                    col = 0;
-                }
-                console.log(row, col)
-                index = [row,col];
-                return index;
-            } else {
-                row = Math.round(Math.random()*2)
-                col = Math.round(Math.random()*2);
-                console.log(row, col)
-                index = [row,col];
-                return index;
             }
         }
+
+        index = row.toString() + col.toString();
+        // console.log(index)
+        return index;
     }
 
-    return {getMove}
+    const getBoardValue = (board) => {
+        // console.log ("get board value", board)
+        let valueMax = [[3, 2, 3], [2, 4, 2], [3, 2, 3]];
+        // console.log(valueMax)
+        var transpose = gameBoard.getTranspose(board);
+        var maximizer = game.getPlayers()[1];
+        var minimizer = game.getPlayers()[0];
+        
+        for (var i=0;i<3;i++) {
+            for (var j=0;j<3;j++) {
+                var filteredRow = board[i].filter (num => num == minimizer.getPiece());
+                var filteredRowMax = board[i].filter (num => num == maximizer.getPiece());
+                var filteredCol = transpose[j].filter (num => num == minimizer.getPiece());
+                var filteredColMax = transpose[j].filter (num => num == maximizer.getPiece());
+                // var corners = [board[0][0], board[0][2], board[2][0], board[2][2]];
+                // var filteredCorners = corners.filter (num => num == minimizer.getPiece());
+                // var filteredCornersMax = corners.filter (num => num == minimizer.getPiece());
+
+                // console.log(i, filteredRow, filteredRowMax, filteredCol, filteredColMax)
+                if (board[i][j] !== "" || valueMax[i][j] == 0) {
+                    valueMax[i][j] = 0;
+                } else if (filteredRowMax.length > 1 || filteredColMax.length > 1) {
+                    valueMax[i][j] = 20;
+                } else if (filteredRow.length > 1 || filteredCol.length > 1) {
+                    valueMax[i][j] = 10;
+                } else if (filteredRow.length > 0 || filteredCol.length > 0) {
+                    valueMax[i][j] = valueMax[i][j]-1;
+                }
+                if (board[1][1] == minimizer.getPiece()) {
+                    if (board[i][j] !== "") {
+                        valueMax[i][j] = 0;
+                    } else if (i==0 && j==0 && board[2][2] == minimizer.getPiece()) {
+                        valueMax[i][j] = 10;
+                    } else if (i==0 && j==2 && board[2][0] == minimizer.getPiece()) {
+                        valueMax[i][j] = 10;
+                    } else if (i==2 && j==0 && board[0][2] == minimizer.getPiece()) {
+                        valueMax[i][j] = 10;
+                    } else if (i==2 && j==2 && board[0][0] == minimizer.getPiece()) {
+                        valueMax[i][j] = 10;
+                    } else if (valueMax[i][j] !== 0) {
+                        valueMax[i][j] = valueMax[i][j]-1;
+                    } 
+                } else if (board[1][1] == maximizer.getPiece()) {
+                    if (board[i][j] !== "") {
+                        valueMax[i][j] = 0;
+                    } else if (i==0 && j==0 && board[2][2] == maximizer.getPiece()) {
+                        valueMax[i][j] = 20;
+                    } else if (i==0 && j==2 && board[2][0] == maximizer.getPiece()) {
+                        valueMax[i][j] = 20;
+                    } else if (i==2 && j==0 && board[0][2] == maximizer.getPiece()) {
+                        valueMax[i][j] = 20;
+                    } else if (i==2 && j==2 && board[0][0] == maximizer.getPiece()) {
+                        valueMax[i][j] = 20;
+                    }
+                }
+                if (i==0 && j==0 && board[2][2] == minimizer.getPiece()) {
+                    valueMax[i][j] = valueMax[i][j]-1;
+                } else if (i==0 && j==2 && board[2][0] == minimizer.getPiece()) {
+                    valueMax[i][j] = valueMax[i][j]-1;
+                } else if (i==2 && j==0 && board[0][2] == minimizer.getPiece()) {
+                    valueMax[i][j] = valueMax[i][j]-1;
+                } else if (i==2 && j==2 && board[0][0] == minimizer.getPiece()) {
+                    valueMax[i][j] = valueMax[i][j]-1;
+                }
+            }
+        }
+        // console.log(valueMax)
+        return valueMax;
+    } 
+    return {minimax}
 
 })();
 
