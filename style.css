@@ -67,7 +67,7 @@ fieldset {
     gap: 10px;
     /* align-items: center; */
     justify-items: center;
-    padding: 30px;
+    padding: 10px;
     border:solid black 3px;
 }
 
@@ -91,7 +91,6 @@ label {
 
 .group label {
     font-weight: bolder;
-    padding: 10px;
 }
 
 .board {
